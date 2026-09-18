@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sibongiseni's Online Office</title>
+    <meta name="description"
+        content="Sibongiseni's Online Office - Professional and affordable web design and web development services.">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #24b2c8;
+            --secondary: #0078ff;
+            --dark: #0b1f33;
+            --light: #f7fbfc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background: #fff;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            padding: 15px 0;
+            transition: 0.3s;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: var(--dark);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: 700;
+            font-size: 1.35rem;
+        }
+
+        .navbar-brand span {
+            color: var(--primary);
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 10px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background:
+                linear-gradient(rgba(5, 20, 35, 0.78), rgba(5, 20, 35, 0.88)),
+                url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80")
+                center/cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 25px 0;
+            color: #e5e5e5;
+        }
+
+        .custom-btn {
+            background: var(--primary);
+            color: white;
+            padding: 13px 32px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .custom-btn:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 12px;
+        }
+
+        .line {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-box {
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .about-heading {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .about-heading span {
+            color: var(--primary);
+        }
+
+        .progress {
+            height: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            background: var(--primary);
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        /* ================= VALUES ================= */
+
+        .value-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            height: 100%;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: auto auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(36,178,200,0.12);
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .value-card h3 {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .service-card {
+            background: white;
+            padding: 40px 25px;
+            text-align: center;
+            height: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            color: #607db8;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* ================= PACKAGES ================= */
+
+        .packages {
+            background: var(--light);
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 18px;
+            padding: 40px 30px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .package-card h3 {
+            color: #e53935;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .package-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .package-card li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background:
+                linear-gradient(rgba(5, 20, 35, 0.9), rgba(5, 20, 35, 0.92)),
+                url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=80")
+                center/cover;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+        }
+
+        .contact-box h2 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            padding: 14px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 45px 0 20px;
+            text-align: center;
+        }
+
+        .footer-contact {
+            margin-bottom: 25px;
+        }
+
+        .footer-contact h3 {
+            color: var(--primary);
+        }
+
+        .footer-contact p {
+            margin: 8px;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+        /* ================= FLOATING BUTTONS ================= */
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 58px;
+            height: 58px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 95px;
+            right: 28px;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 999;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 768px) {
+
+            .navbar {
+                background: var(--dark);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .about-box,
+            .contact-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+
+            <a class="navbar-brand" href="#home">
+                Sibongiseni's <span>Online Office</span>
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+
+                <ul class="navbar-nav">
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link"
+                        href="Sibongiseni%20Yekani's%20CV.pdf"
+                        download>
+                            My CV
+                        </a>
+                    </li> -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#packages">Packages</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="https://web.facebook.com/sibongiseni.yekani.9" class="nav-link facebook social-links d-none d-md-flex align-items-center">
+                            <i class="bi bi-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">   
+                        <a href="https://www.instagram.com/sibongiseni_yekani/" class="nav-link instagram social-links d-none d-md-flex align-items-center ">
+                            <i class="bi bi-instagram"></i></a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    Welcome to <span>Sibongiseni's</span><br>
+                    Online Office
+                </h1>
+
+                <p>
+                    Enable your digital impact and transform your online
+                    presence today.
+                </p>
+
+                <a href="#contact" class="custom-btn">
+                    Enquire Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="about-box">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+
+                        <h2 class="about-heading">
+                            About <span>Us</span>
+                        </h2>
+
+                        <p>
+                            Welcome to Sibongiseni's Online Office – a dynamic
+                            digital and web development service focused on
+                            creativity, innovation and professional online
+                            solutions.
+                        </p>
+
+                        <p>
+                            We are committed to providing high-quality and
+                            affordable websites for startups, small businesses,
+                            personal brands, blogs and portfolio websites.
+                        </p>
+
+                        <p>
+                            Our goal is to help individuals and businesses
+                            establish a strong and effective digital presence.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <h2 class="about-heading mb-4">
+                            Our <span>Skills</span>
+                        </h2>
+
+                        <div class="skill-name">
+                            <span>C# (MVC DOT NET CORE)</span>
+                            <span>+85%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width:85%"></div>
+                        </div>
+
+                        <div class="skill-name">
+                            <span>HTML5</span>
+                            <span>+85%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width:85%"></div>
+                        </div>
+
+
+                        <div class="skill-name">
+                            <span>CSS3</span>
+                            <span>+85%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width:85%"></div>
+                        </div>
+
+
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>+70%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width:50%"></div>
+                        </div>
+
+
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>+50%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width:50%"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VALUES -->
+
+                <div class="row mt-5 g-4">
+
+                    <div class="col-md-4">
+
+                        <div class="value-card">
+
+                            <div class="value-icon">
+                                <i class="bi bi-bullseye"></i>
+                            </div>
+
+                            <h3>Mission</h3>
+
+                            <p>
+                                Our goal is to provide startups and small
+                                businesses with high-quality digital and web
+                                development solutions at affordable prices.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="value-card">
+
+                            <div class="value-icon">
+                                <i class="bi bi-eye"></i>
+                            </div>
+
+                            <h3>Vision</h3>
+
+                            <p>
+                                To become a preferred digital and web
+                                development partner for businesses and
+                                individuals looking for creative online
+                                solutions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="value-card">
+
+                            <div class="value-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+
+                            <h3>Trust</h3>
+
+                            <p>
+                                We believe trust is the foundation of strong
+                                relationships. We listen, collaborate and work
+                                hard to deliver solutions that meet your needs.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Services</h2>
+
+                <p>
+                    Sibongiseni's Online Office offers a variety of
+                    professional digital services.
+                </p>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-display"></i>
+                        </div>
+
+                        <h3>Web Design</h3>
+
+                        <p>
+                            Visually appealing and user-friendly websites
+                            tailored to your brand.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Custom websites with seamless functionality and
+                            clean, structured code.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-server"></i>
+                        </div>
+
+                        <h3>Domain & Hosting</h3>
+
+                        <p>
+                            Assistance with domain setup and hosting to keep
+                            your website online.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
+
+                        <h3>Responsive Design</h3>
+
+                        <p>
+                            Websites designed to work effectively across
+                            desktops, tablets and mobile devices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+
+                        <h3>SEO</h3>
+
+                        <p>
+                            Website optimisation to improve visibility and help
+                            attract more online traffic.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-megaphone"></i>
+                        </div>
+
+                        <h3>Marketing Services</h3>
+
+                        <p>
+                            Digital strategies designed to help grow your
+                            online reach and presence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+    <section class="packages" id="packages">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Packages</h2>
+
+                <p>
+                    Choose a package that best suits your business needs.
+                </p>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="row g-4 justify-content-center">
+
+
+                <!-- STARTER -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="package-card">
+
+                        <h3>Starter Package</h3>
+
+                        <ul>
+                            <li>Website design with up to 5 pages</li>
+                            <li>Domain registration assistance</li>
+                            <li>Hosting setup</li>
+                        </ul>
+
+                        <a href="#contact" class="custom-btn">
+                            Enquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFESSIONAL -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="package-card">
+
+                        <h3>Professional Package</h3>
+
+                        <ul>
+                            <li>Custom website with up to 10 pages</li>
+                            <li>Domain registration assistance</li>
+                            <li>Hosting setup</li>
+                        </ul>
+
+                        <a href="#contact" class="custom-btn">
+                            Enquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUSINESS -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="package-card">
+
+                        <h3>Business Package</h3>
+
+                        <ul>
+                            <li>Website design with up to 15 pages</li>
+                            <li>Domain registration assistance</li>
+                            <li>Hosting setup</li>
+                        </ul>
+
+                        <a href="#contact" class="custom-btn">
+                            Enquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-8">
+
+                    <div class="contact-box">
+
+                        <h2>Send a Message</h2>
+
+                        <form action="https://formspree.io/f/xkgwewqa"
+                              method="POST">
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="name"
+                                placeholder="Your Name"
+                                required>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                placeholder="Your Email"
+                                required>
+
+                            <textarea
+                                class="form-control"
+                                name="message"
+                                rows="6"
+                                placeholder="Your Message"
+                                required>
+                            </textarea>
+
+                            <button type="submit" class="custom-btn">
+                                Send Message
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-contact">
+
+                <h3>Get in Touch</h3>
+
+                <p>
+                    <i class="bi bi-telephone-fill"></i>
+                    068 151 9536
+                </p>
+
+                <p>
+                  <form action="mailto:sibongiseniyekani0@gmail.com" method="POST"></form>
+                    <i class="bi bi-envelope-fill"></i>
+                    <a href="mailto:sibongiseniyekani0@gmail.com">sibongiseniyekani0@gmail.com</a>
+                  </form>
+                </p>
+
+            </div>
+
+            <hr>
+
+            <p>
+                © <span id="currentYear"></span>
+                <strong>Sibongiseni's Online Office</strong>.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/27681519536"
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+
+        <i class="bi bi-whatsapp"></i>
+
+    </a>
+
+    
+
+    <!-- BACK TO TOP -->
+    <a href="#home"
+       class="back-to-top"
+       id="backToTop">
+
+        <i class="bi bi-arrow-up"></i>
+
+    </a>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        /* CURRENT YEAR */
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+
+        /* NAVBAR SCROLL */
+
+        const navbar = document.getElementById("navbar");
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+
+            if (window.scrollY > 500) {
+                backToTop.style.display = "flex";
+            } else {
+                backToTop.style.display = "none";
+            }
+
+        });
+
+
+        /* CLOSE MOBILE MENU AFTER CLICK */
+
+        document.querySelectorAll(".nav-link").forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                const menu =
+                    document.getElementById("navbarMenu");
+
+                const collapse =
+                    bootstrap.Collapse.getInstance(menu);
+
+                if (collapse) {
+                    collapse.hide();
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
